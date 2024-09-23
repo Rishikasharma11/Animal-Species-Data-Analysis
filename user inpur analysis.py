@@ -30,6 +30,16 @@ data = pd.DataFrame({
 
 print(data.to_string)
 
+# ---------------------------------------Population_in_the_Wild----------------------------------------------------
+# User input for checking the population of species
+species_input = input("Enter the name of the species ('Elephant', 'Lion', 'Panda', 'Giraffe', 'Tiger', 'Kangaroo', 'Koala', 'Penguin', 'Gorilla', 'Polar Bear', 'Wolf', 'Cheetah', 'Rhino', 'Zebra', 'Orangutan', 'Bald Eagle', 'Sloth', 'Crocodile', 'Blue Whale', 'Flamingo', 'Lemur', 'Eagle', 'Shark', 'Turtle', 'Ostrich', 'Dolphin', 'Bat', 'Deer', 'Camel', 'Leopard', 'Hippo', 'Antelope') to check its population: ")
+
+if species_input in ['Elephant', 'Lion', 'Panda', 'Giraffe', 'Tiger', 'Kangaroo', 'Koala', 'Penguin', 'Gorilla', 'Polar Bear', 'Wolf', 'Cheetah', 'Rhino', 'Zebra', 'Orangutan', 'Bald Eagle', 'Sloth', 'Crocodile', 'Blue Whale', 'Flamingo', 'Lemur', 'Eagle', 'Shark', 'Turtle', 'Ostrich', 'Dolphin', 'Bat', 'Deer', 'Camel', 'Leopard', 'Hippo', 'Antelope']:
+                total_population = data.loc[data['Species'] ==  species_input, ['Species', 'Population_in_the_Wild']] 
+                print(f"The population of {species_input} is : \n", total_population)
+else:
+    print("\nInvalid input! Please enter a valid species from the list.")
+
 # --------------------------------------Endemic_Regions----------------------------------------------------------------
 # User input for species find in different regions
 species_found = input("Enter the region to find species (Africa, Global, South America, Asia, North America, Australia, China, Antarctica, Arctic, Madagascar) : ").capitalize() 
